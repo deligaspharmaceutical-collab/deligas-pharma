@@ -1,29 +1,40 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #E6E5E5;
   --foreground: #171717;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-outfit);
+  --font-alata: var(--font-alata);
+  --font-outfit: var(--font-outfit);
+  --font-heading: var(--font-alata);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-lora: var(--font-lora);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), sans-serif;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-heading,
+.font-alata {
+  font-family: var(--font-alata), sans-serif;
+}
+
+
+
 
 /* Lenis smooth scroll styles */
 html.lenis,
@@ -46,4 +57,3 @@ html.lenis body {
 .lenis-scrolling iframe {
   pointer-events: none;
 }
-
