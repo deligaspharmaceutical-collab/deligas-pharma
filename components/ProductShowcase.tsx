@@ -224,14 +224,14 @@ export default function ProductShowcase() {
 
 
 
-        {/* Top Header Placeholder (To align layout) */}
-        <div className="h-10 z-10 select-none pointer-events-none" />
+        {/* Top Header Placeholder (To align layout with fixed navbar) */}
+        <div className="h-24 sm:h-32 z-10 select-none pointer-events-none" />
 
         {/* Interactive Layout Content Grid */}
         <div className="relative grid grid-cols-1 md:grid-cols-12 gap-8 items-center justify-between my-auto w-full z-10 max-w-7xl mx-auto px-4">
 
           {/* Left Column: Product Details Stack */}
-          <div className="md:col-span-4 flex items-center min-h-[300px] relative">
+          <div className="md:col-span-3 flex items-center min-h-[300px] relative">
             {products.map((product, index) => (
               <div
                 key={index}
@@ -265,7 +265,7 @@ export default function ProductShowcase() {
           </div>
 
           {/* Center Column: Product Bottle Stack */}
-          <div className="md:col-span-5 flex flex-col items-center justify-center relative min-h-[400px] sm:min-h-[550px]">
+          <div className="md:col-span-6 flex flex-col items-center justify-center relative min-h-[400px] sm:min-h-[550px]">
             <div className="float-wrapper relative w-full h-80 sm:h-[480px] flex justify-center">
               {/* Product Shadow under the bottle */}
               <div className="absolute bottom-[-15px] sm:bottom-[-20px] w-48 sm:w-64 h-6 bg-black/25 blur-md rounded-[50%] z-0 scale-y-[0.3]" />
@@ -301,11 +301,10 @@ export default function ProductShowcase() {
                   <button
                     key={index}
                     onClick={() => handleDotClick(index)}
-                    className={`w-6 h-6 rounded-full border-2 transition-all duration-300 cursor-pointer ${
-                      activeIndex === index
-                        ? "border-white ring-2 ring-white/60 scale-125 shadow-lg"
-                        : "border-transparent opacity-60 hover:opacity-100 hover:scale-105"
-                    }`}
+                    className={`w-6 h-6 rounded-full border-2 transition-all duration-300 cursor-pointer ${activeIndex === index
+                      ? "border-white ring-2 ring-white/60 scale-125 shadow-lg"
+                      : "border-transparent opacity-60 hover:opacity-100 hover:scale-105"
+                      }`}
                     style={{ backgroundColor: product.color }}
                     title={product.name}
                   />

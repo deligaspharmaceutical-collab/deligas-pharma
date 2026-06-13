@@ -101,12 +101,38 @@ export const TabletsIcon = React.forwardRef<SVGSVGElement, IconProps>(
 );
 TabletsIcon.displayName = "TabletsIcon";
 
-// 5. Lookup for dynamic loading / index-based access
+// 5. Sun Icon Component
+export const SunIcon = React.forwardRef<SVGSVGElement, IconProps>(
+  ({ size = 20, width, height, fill = "none", stroke = "currentColor", ...props }, ref) => {
+    return (
+      <svg
+        ref={ref}
+        viewBox="0 0 24 24"
+        width={width ?? size}
+        height={height ?? size}
+        fill={fill}
+        stroke={stroke}
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        xmlns="http://www.w3.org/2000/svg"
+        {...props}
+      >
+        <circle cx="12" cy="12" r="4" />
+        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+      </svg>
+    );
+  }
+);
+SunIcon.displayName = "SunIcon";
+
+// 6. Lookup for dynamic loading / index-based access
 export const iconMap = {
   injection: InjectionIcon,
   muscles: MusclesIcon,
   dumbell: DumbellIcon,
   tablets: TabletsIcon,
+  sun: SunIcon,
 } as const;
 
 export type IconName = keyof typeof iconMap;

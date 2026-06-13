@@ -61,14 +61,18 @@ export default function Loader({ onComplete }: LoaderProps) {
                 "-=0.2" // Slight overlap with the end of the rotation
             );
 
-            // 3. Move/Scale logo + text to the top-left corner of the navbar (Duration: 1.1s, Ends at 3.5s)
-            // Standard desktop navbar logo position: top 1.5rem (24px), left 2rem (32px)
-            // Under CSS transform: translate(0, 0) with scale: 0.625 to match header logo size
+            // 3. Move/Scale logo + text to the exact position of the navbar brand element (Duration: 1.1s, Ends at 3.5s)
             tl.to(
                 flexContainerRef.current,
                 {
-                    left: "2rem",
-                    top: "1.5rem",
+                    left: () => {
+                        const el = document.getElementById("navbar-brand-target");
+                        return el ? el.getBoundingClientRect().left : 32; // fallback 32px (2rem)
+                    },
+                    top: () => {
+                        const el = document.getElementById("navbar-brand-target");
+                        return el ? el.getBoundingClientRect().top : 24; // fallback 24px (1.5rem)
+                    },
                     xPercent: 0,
                     yPercent: 0,
                     scale: 0.625,
@@ -98,7 +102,7 @@ export default function Loader({ onComplete }: LoaderProps) {
     return (
         <div
             ref={containerRef}
-            className="fixed inset-0 z-50 flex bg-white text-black select-none pointer-events-none"
+            className="fixed inset-0 z-[200] flex bg-white text-black select-none pointer-events-none"
         >
             <div
                 ref={flexContainerRef}
