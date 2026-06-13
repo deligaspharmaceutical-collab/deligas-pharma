@@ -102,7 +102,7 @@ export default function Loader({ onComplete }: LoaderProps) {
     return (
         <div
             ref={containerRef}
-            className="fixed inset-0 z-[200] flex bg-white text-black select-none pointer-events-none"
+            className="fixed inset-0 z-[200] flex bg-background text-foreground select-none pointer-events-none"
         >
             <div
                 ref={flexContainerRef}
@@ -137,7 +137,7 @@ export default function Loader({ onComplete }: LoaderProps) {
                     <span className="text-3xl sm:text-4xl font-black tracking-wide text-[#3da0b9] ">
                         DELIGAS
                     </span>
-                    <span className="text-[11px] sm:text-[13px] text-zinc-950 mt-1 pl-[0.15em] tracking-[1.6em]">
+                    <span className="text-[11px] sm:text-[13px] text-nav-brand-text mt-1 pl-[0.15em] tracking-[1.6em]">
                         PHARMA
                     </span>
                 </div>

@@ -126,6 +126,30 @@ export const SunIcon = React.forwardRef<SVGSVGElement, IconProps>(
 );
 SunIcon.displayName = "SunIcon";
 
+// 7. Moon Icon Component
+export const MoonIcon = React.forwardRef<SVGSVGElement, IconProps>(
+  ({ size = 20, width, height, fill = "none", stroke = "currentColor", ...props }, ref) => {
+    return (
+      <svg
+        ref={ref}
+        viewBox="0 0 24 24"
+        width={width ?? size}
+        height={height ?? size}
+        fill={fill}
+        stroke={stroke}
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        xmlns="http://www.w3.org/2000/svg"
+        {...props}
+      >
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+      </svg>
+    );
+  }
+);
+MoonIcon.displayName = "MoonIcon";
+
 // 6. Lookup for dynamic loading / index-based access
 export const iconMap = {
   injection: InjectionIcon,
@@ -133,6 +157,7 @@ export const iconMap = {
   dumbell: DumbellIcon,
   tablets: TabletsIcon,
   sun: SunIcon,
+  moon: MoonIcon,
 } as const;
 
 export type IconName = keyof typeof iconMap;

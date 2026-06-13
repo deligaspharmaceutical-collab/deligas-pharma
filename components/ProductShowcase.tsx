@@ -211,7 +211,7 @@ export default function ProductShowcase() {
     <div
       ref={containerRef}
       id="products"
-      className="relative h-[500vh] w-full bg-[#E6E5E5] z-10"
+      className="relative h-[500vh] w-full bg-background z-10"
     >
       {/* Pinned Screen Viewport */}
       <div className="sticky top-0 left-0 h-screen w-full flex flex-col justify-between p-8 sm:p-12 overflow-hidden text-white">
@@ -241,23 +241,23 @@ export default function ProductShowcase() {
                   userSelect: activeIndex === index ? "auto" : "none",
                 }}
               >
-                <span className="font-alata font-semibold tracking-widest text-xs sm:text-sm text-zinc-800 mb-2 uppercase">
+                <span className="font-alata font-semibold tracking-widest text-xs sm:text-sm text-white/80 mb-2 uppercase">
                   {product.chemical}
                 </span>
-                <h2 className="text-4xl sm:text-6xl font-extrabold leading-tight tracking-tight uppercase mb-4 text-zinc-800 font-outfit">
+                <h2 className="text-4xl sm:text-6xl font-extrabold leading-tight tracking-tight uppercase mb-4 text-white font-outfit">
                   {product.name}
                 </h2>
-                <p className="font-sans text-sm sm:text-base text-zinc-800 leading-relaxed max-w-sm mb-6">
+                <p className="font-sans text-sm sm:text-base text-white/85 leading-relaxed max-w-sm mb-6">
                   {product.desc}
                 </p>
                 <div className="flex gap-4">
                   <div className="border border-white/90 bg-white/10 backdrop-blur-md py-2 px-4 rounded-lg flex flex-col">
-                    <span className="text-[10px] uppercase text-zinc-950">Purity</span>
-                    <span className="font-bold text-sm text-zinc-950">{product.purity}</span>
+                    <span className="text-[10px] uppercase text-white/70">Purity</span>
+                    <span className="font-bold text-sm text-white">{product.purity}</span>
                   </div>
                   <div className="border border-white/90 bg-white/10 backdrop-blur-md py-2 px-4 rounded-lg flex flex-col">
-                    <span className="text-[10px] uppercase text-zinc-950">Half-Life</span>
-                    <span className="font-bold text-sm text-zinc-950">{product.halfLife}</span>
+                    <span className="text-[10px] uppercase text-white/70">Half-Life</span>
+                    <span className="font-bold text-sm text-white">{product.halfLife}</span>
                   </div>
                 </div>
               </div>
