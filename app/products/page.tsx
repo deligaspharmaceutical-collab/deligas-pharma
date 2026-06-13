@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function ProductsPage() {
   return (
-    <main className="pt-32 bg-[#E6E5E5] min-h-screen">
+    <main className="pt-32 bg-background min-h-screen transition-colors duration-300">
       <ProductsClient />
     </main>
   );

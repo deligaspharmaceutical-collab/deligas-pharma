@@ -206,8 +206,12 @@ export default function ProductsClient() {
   );
 
   return (
-    <div ref={containerRef} className="w-full flex flex-col items-center justify-start pb-20">
-      
+    <div
+      ref={containerRef}
+      id="catalogue-section"
+      className="w-full flex flex-col items-center justify-start pb-20 scroll-mt-24"
+    >
+
       {/* Title Header */}
       <div className="text-center max-w-2xl mx-auto px-4 mb-10 select-none">
         <span className="font-heading text-xs tracking-[0.25em] uppercase text-card-text-muted block mb-2">
@@ -223,19 +227,19 @@ export default function ProductsClient() {
 
       {/* Detail Viewer Card */}
       <div className="relative w-full max-w-5xl mx-auto bg-card-bg backdrop-blur-md border border-card-border shadow-card-shadow rounded-3xl p-6 sm:p-10 mb-12 flex flex-col md:flex-row items-center gap-10 md:gap-12 min-h-[460px] transition-all duration-300">
-        
+
         {/* Left Column: Details Content */}
         <div className="flex-1 flex flex-col items-start w-full text-left">
           {/* Compound Type Badge */}
           <span className="active-detail-item px-3 py-1 border border-badge-border bg-badge-bg rounded-full text-[10px] sm:text-xs font-bold tracking-wider uppercase text-badge-text mb-4 transition-colors duration-300">
             {activeProduct.type}
           </span>
-          
+
           {/* Product Name */}
           <h2 className="active-detail-item text-4xl sm:text-5xl font-extrabold font-outfit text-card-text tracking-tight leading-none mb-1 transition-colors duration-300">
             {activeProduct.name}
           </h2>
-          
+
           {/* Active Dosage Info */}
           <span className="active-detail-item text-sm font-sans font-semibold text-card-text-muted mb-6 block transition-colors duration-300">
             Dosage: {activeProduct.dosage} / Concentration: {activeProduct.concentration}
@@ -281,7 +285,7 @@ export default function ProductsClient() {
           <div className="active-image-wrapper relative w-56 h-72 sm:w-64 sm:h-80 flex items-center justify-center">
             {/* Product shadow under box */}
             <div className="absolute bottom-[-15px] w-40 h-5 bg-black/30 dark:bg-black/50 blur-md rounded-[50%] scale-y-[0.3] z-0 transition-colors duration-300" />
-            
+
             <Image
               src={`/products/with-box/${activeProduct.image}`}
               alt={`${activeProduct.name} box`}
@@ -303,9 +307,6 @@ export default function ProductsClient() {
 
         {/* Row 1 Grid */}
         <div className="mb-6">
-          <span className="text-[10px] font-heading tracking-widest text-card-text-muted uppercase block mb-3 pl-1 select-none">
-            Formulation Range A
-          </span>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
             {products.slice(0, 6).map((product, idx) => {
               const globalIndex = idx;
@@ -314,11 +315,10 @@ export default function ProductsClient() {
                 <button
                   key={globalIndex}
                   onClick={() => setActiveIndex(globalIndex)}
-                  className={`relative group backdrop-blur-sm border rounded-2xl p-4 flex flex-col items-center justify-between transition-all duration-300 shadow-sm hover:shadow-md cursor-pointer ${
-                    isActive
+                  className={`relative group backdrop-blur-sm border rounded-2xl p-4 flex flex-col items-center justify-between transition-all duration-300 shadow-sm hover:shadow-md cursor-pointer ${isActive
                       ? "border-badge-text ring-2 ring-badge-text/20 scale-105 bg-card-bg text-card-text font-bold"
                       : "border-grid-card-border bg-grid-card-bg hover:bg-grid-card-bg-hover text-grid-card-text hover:text-card-text"
-                  }`}
+                    }`}
                 >
                   <div className="relative w-24 h-32 mb-3 transition-transform duration-300 group-hover:scale-105 select-none pointer-events-none">
                     <Image
@@ -345,9 +345,6 @@ export default function ProductsClient() {
 
         {/* Row 2 Grid */}
         <div>
-          <span className="text-[10px] font-heading tracking-widest text-card-text-muted uppercase block mb-3 pl-1 select-none">
-            Formulation Range B
-          </span>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
             {products.slice(6, 12).map((product, idx) => {
               const globalIndex = idx + 6;
@@ -356,11 +353,10 @@ export default function ProductsClient() {
                 <button
                   key={globalIndex}
                   onClick={() => setActiveIndex(globalIndex)}
-                  className={`relative group backdrop-blur-sm border rounded-2xl p-4 flex flex-col items-center justify-between transition-all duration-300 shadow-sm hover:shadow-md cursor-pointer ${
-                    isActive
+                  className={`relative group backdrop-blur-sm border rounded-2xl p-4 flex flex-col items-center justify-between transition-all duration-300 shadow-sm hover:shadow-md cursor-pointer ${isActive
                       ? "border-badge-text ring-2 ring-badge-text/20 scale-105 bg-card-bg text-card-text font-bold"
                       : "border-grid-card-border bg-grid-card-bg hover:bg-grid-card-bg-hover text-grid-card-text hover:text-card-text"
-                  }`}
+                    }`}
                 >
                   <div className="relative w-24 h-32 mb-3 transition-transform duration-300 group-hover:scale-105 select-none pointer-events-none">
                     <Image

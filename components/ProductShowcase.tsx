@@ -90,6 +90,13 @@ export default function ProductShowcase() {
     }
   };
 
+  // Scroll smoothly to the catalogue section below the showcase
+  const handleSeeAllClick = () => {
+    if (lenis) {
+      lenis.scrollTo("#catalogue-section", { duration: 1.5 });
+    }
+  };
+
   useGSAP(
     () => {
       if (!containerRef.current || !bgRef.current) return;
@@ -345,7 +352,10 @@ export default function ProductShowcase() {
           </div>
 
           {/* CTA */}
-          <button className="bg-white/10 hover:bg-white text-white hover:text-zinc-950 font-heading text-xs font-bold tracking-wider py-2 px-6 rounded-full transition-all duration-300 border border-white/25 hover:shadow-lg">
+          <button
+            onClick={handleSeeAllClick}
+            className="bg-white/10 hover:bg-white text-white hover:text-zinc-950 font-heading text-xs font-bold tracking-wider py-2 px-6 rounded-full transition-all duration-300 border border-white/25 hover:shadow-lg cursor-pointer"
+          >
             See All Products
           </button>
         </div>

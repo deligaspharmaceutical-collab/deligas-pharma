@@ -4,6 +4,7 @@ import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import Loader from "@/components/loader";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const alata = Alata({
   variable: "--font-alata",
@@ -61,6 +62,7 @@ export default function RootLayout({
           <Loader />
           <Navbar />
           {children}
+          <Footer />
         </SmoothScroll>
       </body>
     </html>
